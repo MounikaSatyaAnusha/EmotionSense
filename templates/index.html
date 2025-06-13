@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EmotionSense++</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    .navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo h2 {
+    color: #667eea;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+    .new{
+      margin-top: 60px;
+    }
+
+      button:hover,
+      button:focus,span {
+  transform: scale(1.1); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+  </style>
+</head>
+<body class="min-h-screen bg-white text-gray-900">
+     <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🧠 EmotionSense++</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="/text-emotion" class="nav-link ">Text Analysis</a></li>
+                <li><a href="/face-emotion" class="nav-link">Face Analysis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+  <!-- Hero Section -->
+   <div class="new">
+  <section class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-3xl"></div>
+    <div class="relative max-w-7xl mx-auto text-center">
+      <div class="flex justify-center mb-6">
+        <div class="p-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl">
+          <i data-lucide="brain" class="h-12 w-12 text-white"></i>
+        </div>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-bold mb-6">
+        <span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          EmotionSense++
+        </span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-600 mb-4 max-w-3xl mx-auto">
+        Multi-Modal Emotion Detection powered by AI & Machine Learning
+      </p>
+      <p class="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
+        Detect emotions from text or facial expressions with industry-leading accuracy. 
+        Get AI-powered insights and track your emotional patterns over time.
+      </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/text-emotion">
+          <button class="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center space-x-2">
+            <i data-lucide="sparkles" class="h-5 w-5"></i>
+            <span >Start Analyzing</span>
+          </button>
+        </a>
+
+        <a href="/face-emotion">
+          <button class="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center space-x-2">
+            <i data-lucide="camera" class="h-5 w-5"></i>
+            <span>Try Face Detection</span>
+          </button>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Features Section -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto text-center mb-16">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">Powerful Emotion Detection</h2>
+    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+      Choose from multiple detection methods to analyze emotions with precision and insight
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    <!-- Feature: Text Emotion -->
+    <a href="/text-emotion" class="group block h-full">
+      <div class="flex flex-col h-full p-8 rounded-2xl bg-blue-50 border border-gray-100 hover:shadow-xl transition-all duration-300">
+        <div class="flex justify-center mb-6">
+          <div class="p-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="file-text" class="h-8 w-8 text-white"></i>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Text Emotion Analysis</h3>
+        <p class="text-gray-600 text-center flex-grow">Analyze emotions from written text using advanced NLP algorithms.</p>
+        <div class="mt-6 text-center">
+          <span class="inline-flex items-center text-sm font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+            Get Started →
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Feature: Face Emotion -->
+    <a href="/face-emotion" class="group block h-full">
+      <div class="flex flex-col h-full p-8 rounded-2xl bg-green-50 border border-gray-100 hover:shadow-xl transition-all duration-300">
+        <div class="flex justify-center mb-6">
+          <div class="p-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="camera" class="h-8 w-8 text-white"></i>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Face Emotion Detection</h3>
+        <p class="text-gray-600 text-center flex-grow">Real-time facial expression analysis through your webcam.</p>
+        <div class="mt-6 text-center">
+          <span class="inline-flex items-center text-sm font-semibold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
+            Get Started →
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+  <!-- CTA Section -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl p-12 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="relative">
+          <i data-lucide="heart" class="h-16 w-16 mx-auto mb-6 text-white/80"></i>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to understand emotions better?</h2>
+          <p class="text-xl mb-8 text-white/90">
+            Join thousands of users who trust EmotionSense++ for accurate emotion detection
+          </p>
+          <a href="/text-emotion">
+            <button class="px-10 py-4 bg-white text-indigo-600 font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200">
+              Start Your Analysis
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Icons init -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <script src="static/scripts/main.js"></script>
+</body>
+</html>

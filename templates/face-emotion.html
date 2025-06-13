@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Emotion Analysis - EmotionSense++</title>
+    <link rel="stylesheet" href="static/styles/main.css">
+    <link rel="stylesheet" href="static/styles/face-emotion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🧠 EmotionSense++</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/text-emotion" class="nav-link">Text Analysis</a></li>
+                <li><a href="/face-emotion" class="nav-link active">Face Analysis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="camera-container">
+            <h1 class="page-title">📷 Face Emotion Analysis</h1>
+            <p class="page-description">Allow camera access to analyze your facial emotions in real-time</p>
+
+            <!-- Camera Section -->
+            <div class="camera-section">
+                <div class="video-container">
+                    <video id="video" autoplay muted></video>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <div id="camera-overlay" class="camera-overlay">
+                        <div class="camera-placeholder">
+                            <div class="camera-icon" style="text-align: center;font-weight: bold;font-size: larger;"><strong>📷</strong></div>
+                            <div class="video-description" style="text-align: center;">Click "Start Camera" to begin</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Camera Controls -->
+                <div class="camera-controls">
+                    <button id="start-camera" class="control-btn primary">📹 Start Camera</button>
+                    <button id="capture-btn" class="control-btn secondary" style="background-color: green;color: white;"   disabled>📸 Capture</button>
+                    <button id="stop-camera" class="control-btn danger" disabled>⏹️ Stop Camera</button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="face-results" class="face-results" style="display: none;">
+                <h2 style="text-align: center;font-weight: bold;font-style: italic;">Current Emotion Analysis</h2>
+                <div class="emotion-display">
+                    <div class="detected-emotion">
+                        <span id="detected-emotion-text" class="emotion-text">Neutral</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instructions -->
+            <div class="instructions">
+                <h4>📋 Instructions</h4>
+                <ul>
+                    <li>Make sure you're in a well-lit environment</li>
+                    <li>Position your face clearly in the camera frame</li>
+                    <li>Try different expressions to see real-time emotion detection</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/scripts/face-emotion.js"></script>
+</body>
+</html>

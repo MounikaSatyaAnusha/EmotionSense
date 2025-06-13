@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Emotion Analysis - EmotionSense++</title>
+    <link rel="stylesheet" href="static/styles/main.css">
+    <link rel="stylesheet" href="static/styles/text-emotion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🧠 EmotionSense++</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/text-emotion" class="nav-link active">Text Analysis</a></li>
+                <li><a href="/face-emotion" class="nav-link">Face Analysis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="analysis-container">
+            <h1 class="page-title">📝 Text Emotion Analysis</h1>
+            <p class="page-description">Enter your text below and let our AI analyze the emotions</p>
+
+            <!-- Input Section -->
+             <form method="post" action="/predict-text-emotion" id="text-form">
+            <div class="input-section">
+                <textarea 
+                    id="text-input" 
+                    name="user_input"
+                    placeholder="Type or paste your text here... (e.g., 'I'm feeling great today!' or 'This is really frustrating')"
+                    rows="6"
+                ></textarea>
+                <div class="input-controls">
+                    <button id="analyze-btn" class="analyze-btn" type="submit">🔍 Analyze Emotion</button>
+                    <button id="clear-btn" class="clear-btn">🗑️ Clear</button>
+                </div>
+            </div>
+           </form>
+
+            <!-- Results Section -->
+            {% if prediction %}
+    <div id="results-section" class="results-section">
+        <h2 style="text-align: center;font-style: italic;">Analysis Results</h2><br>
+        <div class="emotion-results">
+            <div class="primary-emotion">
+                <p><strong>Input:</strong> {{ user_input }}</p>
+                <span class="emotion-label">Primary Emotion:</span>
+                <span class="emotion-value">{{ prediction }}</span>
+                <span class="emotion-emoji">{{ emoji }}</span>
+            </div>
+        </div>
+
+        <div class="ai-suggestions">
+            <h3 style="font-style:italic ;text-align: center;">💡 AI Suggestions</h3>
+            <ul class="suggestions-list" style="margin-left: 80px;">
+                {% for tip in suggestions %}
+                    <li>{{ tip }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+
+            <!-- Sample Texts -->
+            <div class="sample-texts">
+                <h4>Try these sample texts:</h4>
+                <div class="sample-buttons">
+                    <button class="sample-btn" onclick="setSampleText('I am so excited about my new job! This is the best day ever!')">😊 Happy</button>
+                    <button class="sample-btn" onclick="setSampleText('I feel really sad and lonely today. Nothing seems to go right.')">😢 Sad</button>
+                    <button class="sample-btn" onclick="setSampleText('This traffic is making me so angry! I hate being late.')">😠 Angry</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/scripts/text-emotion.js"></script>
+</body>
+</html>
